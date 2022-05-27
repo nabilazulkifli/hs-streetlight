@@ -1,5 +1,2 @@
 # Backend
-1. GET users
-```shell
-http://localhost:8089/api/v1/users
-```
+Postman: https://documenter.getpostman.com/view/12779424/Uz5AseiP
