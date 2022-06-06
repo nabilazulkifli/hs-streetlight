@@ -19,7 +19,6 @@ app.use(cors());
 app.use(useragent.express());
 app.use(cors({ origin: '*' }));
 
-require('dotenv').config({ path: `.env.development` })
 
 // Settings for CORS
 // app.use((req: Request, res: Response, next: NextFunction) => {
