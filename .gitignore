@@ -2,3 +2,6 @@
 
 backend/node_modules
 backend/dist
+
+backend/gateway/node_modules
+backend/user/node_modules
