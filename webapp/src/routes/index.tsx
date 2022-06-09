@@ -3,8 +3,11 @@ import {
     Route,
     Routes, Navigate
 } from "react-router-dom";
-import {LoginView} from "../pages/Login";
+import {Login} from "../pages/Login";
 import {DefaultView} from "../pages/Default";
+import {MainLayout} from "../layout";
+import {Dashboard} from "../pages/Dashboard";
+import {ForgetPassword} from "../pages/ForgetPassword";
 
 export const Routing = () => {
     return (
@@ -12,12 +15,12 @@ export const Routing = () => {
             <BrowserRouter>
                 {
                     <Routes>
-                        <Route element={<DefaultView />} path="/" />
-                        {/*<Route path="/" element={<UserLayout/>}>*/}
-                        {/*    <Route path="/charge-point" element={<ChargePoints/>}/>*/}
-                        {/*    <Route path="/event-log" element={<EventLogView/>}/>*/}
-                        {/*</Route>*/}
-                        <Route element={<LoginView />} path="/login" />
+                        <Route element={<Login/>} path="/login"/>
+                        <Route element={<ForgetPassword/>} path="/forget-password"/>
+                        <Route element={<DefaultView/>} path="/default"/>
+                        <Route path="/app" element={<MainLayout/>}>
+                            <Route path="/app/dashboard" element={<Dashboard/>}/>
+                        </Route>
                     </Routes>
                 }
             </BrowserRouter>
