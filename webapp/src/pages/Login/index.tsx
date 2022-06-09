@@ -54,6 +54,7 @@ export const Login = () => {
                                 <Link color={'blue.400'} onClick={() => navigate("/forget-password")}>Forgot password?</Link>
                             </Stack>
                             <Button
+                                onClick={() => navigate("/app/dashboard")}
                                 bg={'blue.400'}
                                 color={'white'}
                                 _hover={{

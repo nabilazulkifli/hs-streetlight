@@ -16,6 +16,7 @@ export const Routing = () => {
                 {
                     <Routes>
                         <Route element={<Login/>} path="/login"/>
+                        <Route element={<Login/>} path="/"/>
                         <Route element={<ForgetPassword/>} path="/forget-password"/>
                         <Route element={<DefaultView/>} path="/default"/>
                         <Route path="/app" element={<MainLayout/>}>
