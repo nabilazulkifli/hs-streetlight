@@ -5,6 +5,8 @@ import {FiServer} from "react-icons/fi";
 import {BsPerson} from "react-icons/bs";
 import TotalPowerConsumptionChart from "../../components/TotalPowerConsumption";
 import LineChart from "../../components/Charts/LineChart";
+import MonthlyPowerConsumption from "../../components/MonthlyPowerConsumption";
+import BarChart from "../../components/Charts/BarChart";
 
 export const Dashboard = () => {
     return (
@@ -54,11 +56,20 @@ export const Dashboard = () => {
                 </SimpleGrid>
             </Box>
 
-            <TotalPowerConsumptionChart
-                title={"Total Power Consumption"}
-                percentage={5}
-                chart={<LineChart />}
-            />
+            <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
+                <SimpleGrid columns={{base: 1, md: 2}} spacing={{base: 5, lg: 8}}>
+                    <TotalPowerConsumptionChart
+                        title={"Total Power Consumption"}
+                        percentage={5}
+                        chart={<LineChart />}
+                    />
+                    <MonthlyPowerConsumption
+                        title={"Monthly Power Consumption"}
+                        percentage={5}
+                        chart={<BarChart />}
+                    />
+                </SimpleGrid>
+            </Box>
         </>
     )
 }
