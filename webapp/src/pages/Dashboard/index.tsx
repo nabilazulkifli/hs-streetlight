@@ -70,6 +70,31 @@ export const Dashboard = () => {
                     />
                 </SimpleGrid>
             </Box>
+
+            <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
+                <SimpleGrid columns={{base: 1, md: 4}} spacing={{base: 5, lg: 8}}>
+                    <StatsCard
+                        title={'Location'}
+                        stat={'Shah Alam'}
+                        icon={<GoLocation size={'3em'}/>}
+                    />
+                    <StatsCard
+                        title={'Majlis'}
+                        stat={'1'}
+                        icon={<GoLocation size={'3em'}/>}
+                    />
+                    <StatsCard
+                        title={'No if Sections'}
+                        stat={'15'}
+                        icon={<GoLocation size={'3em'}/>}
+                    />
+                    <StatsCard
+                        title={'No of Feeder Pillars'}
+                        stat={'33'}
+                        icon={<GoLocation size={'3em'}/>}
+                    />
+                </SimpleGrid>
+            </Box>
         </>
     )
 }
