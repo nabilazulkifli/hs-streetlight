@@ -1,13 +1,13 @@
-import proxy from "express-http-proxy";
+import {router as monitorRouter} from "./src/routes/monitor.route";
 
 const express = require('express');
-const port = 8080;
+const port = 8083;
 
 const app = express();
 app.use(express.json());
-app.use("/device", proxy("http://localhost:8082/"))
-app.use("/monitor", proxy("http://localhost:8083/"))
 
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
+
+app.use(monitorRouter)

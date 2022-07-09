@@ -1,5 +1,5 @@
 {
-  "name": "device",
+  "name": "monitor",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -30,7 +30,6 @@
     "express-useragent": "^1.0.15",
     "joi": "^17.6.0",
     "jsonwebtoken": "^8.5.1",
-    "kafkajs": "^2.1.0",
     "morgan": "^1.10.0"
   }
 }
