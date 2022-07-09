@@ -1,12 +1,13 @@
-import proxy from "express-http-proxy";
+import {router as deviceRouter} from "./src/routes/device.route";
 
 const express = require('express');
-const port = 8080;
+const port = 8082;
 
 const app = express();
 app.use(express.json());
-app.use("/device", proxy("http://localhost:8082/"))
 
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
+
+app.use(deviceRouter)

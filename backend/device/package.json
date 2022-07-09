@@ -1,5 +1,5 @@
 {
-  "name": "gateway",
+  "name": "devicey",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@types/compression": "^1.7.2",
-    "@types/express-http-proxy": "^1.6.3",
     "@types/express-jwt": "^6.0.4",
     "@types/express-useragent": "^1.0.2",
     "@types/morgan": "^1.9.3",
@@ -27,7 +26,6 @@
     "dotenv": "^16.0.1",
     "errorhandler": "^1.5.1",
     "express": "^4.18.1",
-    "express-http-proxy": "^1.6.3",
     "express-jwt": "^6.1.1",
     "express-useragent": "^1.0.15",
     "joi": "^17.6.0",
