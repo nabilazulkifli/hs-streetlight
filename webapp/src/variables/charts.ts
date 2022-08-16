@@ -5,6 +5,13 @@ export const barChartData = [
     },
 ];
 
+export const barChartEletricData = [
+    {
+        name: "Power Quality",
+        data: [5699, 5760, 5790, 5841, 5987, 5692, 5892, 5791, 5771],
+    },
+];
+
 export const barChartOptions = {
     chart: {
         toolbar: {
@@ -82,6 +89,7 @@ export const barChartOptions = {
         },
     ],
 };
+
 
 export const lineChartData = [
     {

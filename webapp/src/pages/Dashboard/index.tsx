@@ -6,8 +6,8 @@ import {BsPerson} from "react-icons/bs";
 import TotalPowerConsumptionChart from "../../components/TotalPowerConsumption";
 import LineChart from "../../components/Charts/LineChart";
 import MonthlyPowerConsumption from "../../components/MonthlyPowerConsumption";
-import BarChart from "../../components/Charts/BarChart";
-
+import {BarChart,EleBarChart} from "../../components/Charts/BarChart";
+import ElectricityBill from "../../components/ElectricityBill"
 export const Dashboard = () => {
     return (
         <>
@@ -57,7 +57,7 @@ export const Dashboard = () => {
             </Box>
 
             <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
-                <SimpleGrid columns={{base: 1, md: 2}} spacing={{base: 5, lg: 8}}>
+                <SimpleGrid columns={{base: 1, md: 3}} spacing={{base: 5, lg: 8}}>
                     <TotalPowerConsumptionChart
                         title={"Total Power Consumption"}
                         percentage={5}
@@ -67,6 +67,11 @@ export const Dashboard = () => {
                         title={"Monthly Power Consumption"}
                         percentage={5}
                         chart={<BarChart />}
+                    />
+                    <ElectricityBill
+                        title={"Electricity Bill"}
+                        percentage={5}
+                        chart={<EleBarChart />}
                     />
                 </SimpleGrid>
             </Box>
