@@ -8,6 +8,8 @@ import LineChart from "../../components/Charts/LineChart";
 import MonthlyPowerConsumption from "../../components/MonthlyPowerConsumption";
 import {BarChart,EleBarChart} from "../../components/Charts/BarChart";
 import ElectricityBill from "../../components/ElectricityBill"
+import {BiCheckSquare} from "react-icons/bi"
+import {RiCheckboxIndeterminateLine} from "react-icons/ri"
 export const Dashboard = () => {
     return (
         <>
@@ -75,6 +77,22 @@ export const Dashboard = () => {
                     />
                 </SimpleGrid>
             </Box>
+
+            <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
+                <SimpleGrid columns={{base: 1, md: 2}} spacing={{base: 5, lg: 8}}>
+                    <StatsCard
+                        title={'Uptime'}
+                        stat={'615 Active'}
+                        icon={<BiCheckSquare size={'3em'}/>}
+                    />
+                    <StatsCard
+                        title={'Downtime'}
+                        stat={'514 Inactive'}
+                        icon={<RiCheckboxIndeterminateLine size={'3em'}/>}
+                    />
+                </SimpleGrid>
+            </Box>
+
 
             <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
                 <SimpleGrid columns={{base: 1, md: 4}} spacing={{base: 5, lg: 8}}>
