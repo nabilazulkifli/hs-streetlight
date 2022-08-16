@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Chart from "react-apexcharts";
-import {barChartData, barChartOptions} from "../../variables/charts";
+import {barChartData, barChartEletricData, barChartOptions} from "../../variables/charts";
 
-class BarChart extends Component {
+export class BarChart extends Component {
     constructor(props: any) {
         super(props);
         this.state = {
@@ -31,4 +31,36 @@ class BarChart extends Component {
     }
 }
 
-export default BarChart;
+
+export class EleBarChart extends Component {
+    constructor(props: any) {
+        super(props);
+        this.state = {
+            chartData: [],
+            chartOptions: {},
+        };
+    }
+
+    componentDidMount() {
+        this.setState({
+            chartData: barChartEletricData,
+            chartOptions: barChartOptions,
+        });
+    }
+
+    render() {
+        return (
+            <Chart
+                options={{}}
+                series={barChartEletricData}
+                type="bar"
+                width="100%"
+                height="100%"
+            />
+        );
+    }
+}
+
+// export default BarChart;
+// export default EleBarChart;
+
