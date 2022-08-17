@@ -50,4 +50,6 @@ const SummaryTable = () => {
     );
 };
 
+
+
 export default SummaryTable;
