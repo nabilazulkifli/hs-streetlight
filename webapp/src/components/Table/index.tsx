@@ -10,6 +10,38 @@ import {
     TableContainer,
 } from '@chakra-ui/react'
 
+//
+// const captionProps={
+//     fontStyle:'italic',
+// }
+//
+// const headerRowProps={
+//     borderBottom:'1px solid',
+//     borderColor: 'gray.500',
+// }
+//
+// const rowProps={
+//     striped: {even:{bg:'gray.500'}},
+//     borderBottom: '1px solid',
+//     borderColor: 'gray.300',
+//     _hover:{bg:'blue.500'},
+// }
+//
+// export default function TableSummary(){
+//     return(
+//         <Table
+//         columns={columns}
+//         data={data}
+//         caption="Summary Table"
+//         captionProps={captionProps}
+//         headerRowProps={headerRowProps}
+//         rowProps={rowProps}
+//         p={2}
+//         />
+//     )
+// }
+//
+
 const SummaryTable = () => {
     return (
         <TableContainer>
