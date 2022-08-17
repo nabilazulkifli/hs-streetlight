@@ -5,7 +5,6 @@ import {
     MenuList,
     MenuItem,
     Button,
-    Stack,
     Box,
     SimpleGrid,
     Table,
@@ -13,11 +12,9 @@ import {
     Tbody,
     Tr,
     Th,
-    Td,
     TableContainer,
     Input,
-    Grid,
-    GridItem
+    Stack, Select
 } from '@chakra-ui/react'
 import {BiChevronDown} from "react-icons/bi";
 
@@ -28,44 +25,34 @@ export const ElectricityBilling = () => {
             <SimpleGrid columns={2} spacing={40}>
                 <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
                     <SimpleGrid columns={{base: 1, md: 1}} spacing={{base: 5, lg: 8}}>
-                        <Stack direction="row" spacing={4}>
-                            <text>Concession: </text>
-                            <Menu>
-                                <MenuButton as={Button} rightIcon={<BiChevronDown />}>
-                                    Select
-                                </MenuButton>
-                                <MenuList>
-                                    <MenuItem onClick={() =>{ }}>TECHWON</MenuItem>
-                                    <MenuItem>DYNAMIC</MenuItem>
-                                </MenuList>
-                                <Button colorScheme="grey" variant="outline">
-                                    Apply
-                                </Button>
-                            </Menu>
+                        <text> Concession: </text>
+                        <Stack spacing={20} direction={['column', 'row']}>
+                            <Select placeholder="Select Option">
+                                <option value="'option1">TECHWON </option>
+                                <option value="'option2">DYNAMIC </option>
+                            </Select>
+                            <Button colorScheme="teal" variant="outline">
+                                Apply
+                            </Button>
                         </Stack>
                     </SimpleGrid>
                 </Box>
 
                 <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}} >
                     <SimpleGrid columns={{base: 1, md: 1}} spacing={{base: 5, lg: 8}}>
-                        <Stack direction="row" spacing={4}>
-                            <text>View By: </text>
-                            <Menu>
-                                <MenuButton as={Button} rightIcon={<BiChevronDown />} >
-                                    Select
-                                </MenuButton>
-                                <MenuList>
-                                    <MenuItem>DAY</MenuItem>
-                                    <MenuItem>MONTH</MenuItem>
-                                    <MenuItem>YEAR</MenuItem>
-                                </MenuList>
-                                <Input className="input"
-                                       placeholder="Select Date and Time"
-                                       type="datetime-local"
-                                       width= "40%"
+                        <text>View By: </text>
+                        <Stack spacing={20} direction={['column', 'row']}>
+                            <Select placeholder="Select Option">
+                                <option value="'option1">YEAR </option>
+                                <option value="'option2">MONTH </option>
+                                <option value="'option2">DAY </option>
+                            </Select>
+                               <Input className="input"
+                                      placeholder="Select Date and Time"
+                                      type="datetime-local"
+                                      width= "50%"
 
-                                />
-                            </Menu>
+                               />
                         </Stack>
                     </SimpleGrid>
                 </Box>

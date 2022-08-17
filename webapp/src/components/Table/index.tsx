@@ -3,32 +3,6 @@ import { TableContainer,Table, Thead, Tbody, Tr, Th, Td, chakra } from '@chakra-
 
 
 
-
-function SummaryTable() {
-    const data = React.useMemo(
-        () => [
-            {
-                concession: 'TECHWON',
-                totalPowerConsumption: 26123.15,
-                uptime: '511/1033',
-                downTime: '482/1033',
-                accumulatedElectricity: 5316.01,
-                accumulatedCarbonFootprint: 18.36,
-                energySavings: 0
-            },
-            {
-                concession: 'DYNAMIC',
-                totalPowerConsumption: 4920.47,
-                upTime: '64/96',
-                downTime: '32/96',
-                accumulatedElectricity: 1001.01,
-                accumulatedCarbonFootprint: 3.46,
-                energySavings: 0
-            },
-        ],
-        [],
-    )
-
 const SummaryTable = () => {
     return (
         <TableContainer>

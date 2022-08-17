@@ -9,6 +9,7 @@ import {
     VStack,
     Icon,
     useColorModeValue,
+
     Link,
     Drawer,
     DrawerContent,
@@ -33,26 +34,37 @@ import {
     FiChevronDown,
 } from 'react-icons/fi';
 import {CgCalculator} from 'react-icons/cg'
+import {AiTwotoneAlert} from 'react-icons/ai'
+import {TiTicket} from 'react-icons/ti'
+import {HiOutlineDocumentReport} from 'react-icons/hi'
+import {SiGoogleanalytics} from 'react-icons/si'
+
 import {IconType} from 'react-icons';
 import {ReactText} from 'react';
-import { Outlet } from "react-router-dom"
+import {Outlet, useNavigate} from "react-router-dom"
 
 interface LinkItemProps {
     name: string;
     icon: IconType;
+    path: string;
 }
 
 const LinkItems: Array<LinkItemProps> = [
-    {name: 'Home', icon: FiHome},
-    {name: 'Electricity Billing', icon: CgCalculator},
-    {name: 'Trending', icon: FiTrendingUp},
-    {name: 'Explore', icon: FiCompass},
-    {name: 'Favourites', icon: FiStar},
-    {name: 'Settings', icon: FiSettings},
+    {name: 'Home', icon: FiHome, path: "/app/dashboard" },
+    {name: 'Electricity Billing', icon: CgCalculator, path: '/app/electricity-billing'},
+    {name: 'Alert', icon: AiTwotoneAlert, path: '/app/alert'},
+    {name: 'Tickets', icon: TiTicket, path: '/app/tickets'},
+    {name: 'Report', icon:HiOutlineDocumentReport , path: '/app/report'},
+    {name: 'Analytics', icon: SiGoogleanalytics, path: '/app/analytics'},
+    {name: 'Trending', icon: FiTrendingUp, path: "/app/dashboard"},
+    {name: 'Explore', icon: FiCompass, path: "/app/dashboard"},
+    {name: 'Favourites', icon: FiStar, path: "/app/dashboard"},
+    {name: 'Settings', icon: FiSettings, path: "/app/dashboard"},
 ];
 
 export const MainLayout = () => {
     const {isOpen, onOpen, onClose} = useDisclosure();
+
     return (
         <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')}>
             <SidebarContent
@@ -85,6 +97,9 @@ interface SidebarProps extends BoxProps {
 }
 
 const SidebarContent = ({onClose, ...rest}: SidebarProps) => {
+
+    const navigate = useNavigate()
+
     return (
         <Box
             transition="3s ease"
@@ -102,7 +117,7 @@ const SidebarContent = ({onClose, ...rest}: SidebarProps) => {
                 <CloseButton display={{base: 'flex', md: 'none'}} onClick={onClose}/>
             </Flex>
             {LinkItems.map((link) => (
-                <NavItem key={link.name} icon={link.icon}>
+                <NavItem key={link.name} icon={link.icon} onClick={() => navigate(link.path)}>
                     {link.name}
                 </NavItem>
             ))}
