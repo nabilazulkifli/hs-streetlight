@@ -32,6 +32,7 @@ import {
     FiBell,
     FiChevronDown,
 } from 'react-icons/fi';
+import {CgCalculator} from 'react-icons/cg'
 import {IconType} from 'react-icons';
 import {ReactText} from 'react';
 import { Outlet } from "react-router-dom"
@@ -43,6 +44,7 @@ interface LinkItemProps {
 
 const LinkItems: Array<LinkItemProps> = [
     {name: 'Home', icon: FiHome},
+    {name: 'Electricity Billing', icon: CgCalculator},
     {name: 'Trending', icon: FiTrendingUp},
     {name: 'Explore', icon: FiCompass},
     {name: 'Favourites', icon: FiStar},

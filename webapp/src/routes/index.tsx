@@ -9,6 +9,7 @@ import {MainLayout} from "../layout";
 import {Dashboard} from "../pages/Dashboard";
 import {ForgetPassword} from "../pages/ForgetPassword";
 import {NotFound} from "../pages/NotFound";
+import {ElectricityBilling} from "../pages/ElectricityBilling";
 
 export const Routing = () => {
     return (
@@ -23,7 +24,9 @@ export const Routing = () => {
                         <Route element={<NotFound/>} path="/404"/>
                         <Route path="/app" element={<MainLayout/>}>
                             <Route path="/app/dashboard" element={<Dashboard/>}/>
+                            <Route path="/app/electricity-billing" element={<ElectricityBilling/>} />
                         </Route>
+                        {/*<Route path="app/electricity-billing" element={<ElectricityBilling/>} />*/}
                         <Route path="*" element={<Navigate to={"/404"}/>}/>
                     </Routes>
                 }
