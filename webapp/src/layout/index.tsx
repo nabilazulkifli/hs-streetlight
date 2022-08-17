@@ -40,16 +40,15 @@ import { Outlet } from "react-router-dom"
 interface LinkItemProps {
     name: string;
     icon: IconType;
-    href: string;
 }
 
 const LinkItems: Array<LinkItemProps> = [
-    {name: 'Home', icon: FiHome,href:'/app/report'},
-    {name: 'Trending', icon: FiTrendingUp,href:'/app/report'},
-    {name: 'Explore', icon: FiCompass,href:'/app/report'},
-    {name: 'Favourites', icon: FiStar,href:'/app/report'},
-    {name: 'Settings', icon: FiSettings,href:'/app/report'},
-    {name: 'Report', icon:FiPieChart, href:'/app/report'}
+    {name: 'Home', icon: FiHome},
+    {name: 'Trending', icon: FiTrendingUp},
+    {name: 'Explore', icon: FiCompass},
+    {name: 'Favourites', icon: FiStar},
+    {name: 'Settings', icon: FiSettings},
+    {name: 'Report', icon:FiPieChart}
 ];
 
 export const MainLayout = () => {
