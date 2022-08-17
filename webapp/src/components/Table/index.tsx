@@ -1,120 +1,87 @@
-import React from 'react';
-import { Table, Thead, Tbody, Tr, Th, Td, chakra } from '@chakra-ui/react'
-import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
-import { useTable, useSortBy } from 'react-table'
-import {column,data} from "../Charts/Table";
+import React from "react";
+import {
+    Table,
+    Thead,
+    Tbody,
+    Tfoot,
+    Tr,
+    Th,
+    Td,
+    TableContainer,
+} from '@chakra-ui/react'
 
+//
+// const captionProps={
+//     fontStyle:'italic',
+// }
+//
+// const headerRowProps={
+//     borderBottom:'1px solid',
+//     borderColor: 'gray.500',
+// }
+//
+// const rowProps={
+//     striped: {even:{bg:'gray.500'}},
+//     borderBottom: '1px solid',
+//     borderColor: 'gray.300',
+//     _hover:{bg:'blue.500'},
+// }
+//
+// export default function TableSummary(){
+//     return(
+//         <Table
+//         columns={columns}
+//         data={data}
+//         caption="Summary Table"
+//         captionProps={captionProps}
+//         headerRowProps={headerRowProps}
+//         rowProps={rowProps}
+//         p={2}
+//         />
+//     )
+// }
+//
 
-function SummaryTable() {
-    const data = React.useMemo(
-        () => [
-            {
-                concession: 'TECHWON',
-                totalPowerConsumption: 26123.15,
-                uptime: '511/1033',
-                downTime: '482/1033',
-                accumulatedElectricity: 5316.01,
-                accumulatedCarbonFootprint: 18.36,
-                energySavings: 0
-            },
-            {
-                concession: 'DYNAMIC',
-                totalPowerConsumption: 4920.47,
-                upTime: '64/96',
-                downTime: '32/96',
-                accumulatedElectricity: 1001.01,
-                accumulatedCarbonFootprint: 3.46,
-                energySavings: 0
-            },
-        ],
-        [],
-    )
-
-    const columns = React.useMemo(
-        () => [
-            {
-                Header: 'Concession',
-                accessor: 'concession',
-            },
-            {
-                Header: 'Total Power Consumption (KWh)',
-                accessor: 'totalPowerConsumption',
-                isNumeric: true,
-            },
-            {
-                Header: 'Uptime (Lamp Up/ Total Lamp)',
-                accessor: 'uptime',
-            },
-            {
-                Header: 'Downtime (Lamp Down/ Total Lamp)',
-                accessor: 'downTime',
-            },
-            {
-                Header: 'Accumulated Electricity Bill (RM)',
-                accessor: 'accumulatedElectricity',
-                isNumeric: true,
-            },
-            {
-                Header: 'Accumulated Electricity Bill (RM)',
-                accessor: 'accumulatedElectricity',
-                isNumeric: true,
-            },
-            {
-                Header: 'Accumulated Carbon Footprint (Metric Ton)',
-                accessor: 'accumulatedCarbonFootprint',
-                isNumeric: true,
-            },
-            {
-                Header: 'Energy Savings (KWh)',
-                accessor: 'energySavings',
-                isNumeric: true,
-            },
-        ],
-        [],
-    )
-
-    const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-        useTable({ columns, data }, useSortBy)
-
+const SummaryTable = () => {
     return (
-        <Table {...getTableProps()}>
-            <Thead>
-                {headerGroups.map((headerGroup) => (
-                    <Tr {...headerGroup.getHeaderGroupProps()}>
-                        {headerGroup.headers.map((column) => (
-                            <Th
-                                {...column.getHeaderProps(column.getSortByToggleProps())}
-                                isNumeric={column.isNumeric}
-                            >(
-                                {column.render('Header')}
-                                <chakra.span pl='4'>
-                                    {column.isSorted ? (
-                                        column.isSortedDesc ? (
-                                            <TriangleDownIcon aria-label='sorted descending' />
-                                        ) : (
-                                            <TriangleUpIcon aria-label='sorted ascending' />
-                                        )
-                                    ) : null}
-                                </chakra.span>
-                            </Th>
-                        ))}
+        <TableContainer>
+            <Table size='sm'>
+                <Thead>
+                    <Tr>
+                        <Th>Concession</Th>
+                        <Th>Total Power Consumption (KWh)</Th>
+                        <Th>Uptime (Lamp Up/ Total Lamp)</Th>
+                        <Th>Downtime (Lamp Down/ Total Lamp)</Th>
+                        <Th>Accumulated Electricity Bill (RM)</Th>
+                        <Th>Accumulated Carbon Footprint (Metric Ton)</Th>
+                        <Th>Energy Savings (KWh)</Th>
                     </Tr>
-                ))}
-            </Thead>
-            <Tbody {...getTableBodyProps()}>
-                {rows.map((row) => {
-                    prepareRow(row)
-                    return (
-                        <Tr {...row.getRowProps()}>
-                            {row.cells.map((cell) => (
-                                <Td {...cell.getCellProps()} isNumeric={cell.column.isNumeric}>
-                                    {cell.render('Cell')}
-                                </Td>
-                            ))}
-                        </Tr>
-                    )
-                })}
-            </Tbody>
-        </Table>
-    )
-}
+                </Thead>
+                <Tbody>
+                    <Tr>
+                        <Td>TECHWON</Td>
+                        <Td>26123.15</Td>
+                        <Td>511/1033</Td>
+                        <Td>482/1033</Td>
+                        <Td>5316.01</Td>
+                        <Td>18.36</Td>
+                        <Td>0</Td>
+                    </Tr>
+                    <Tr>
+                        <Td>DYNAMIC</Td>
+                        <Td>4920.47</Td>
+                        <Td>64/96</Td>
+                        <Td>32/96</Td>
+                        <Td>1001.01</Td>
+                        <Td>3.46</Td>
+                        <Td>0</Td>
+                    </Tr>
+                </Tbody>
+            </Table>
+        </TableContainer>
+    );
+};
+
+
+
+export default SummaryTable;

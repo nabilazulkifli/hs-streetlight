@@ -10,9 +10,7 @@ import {BarChart,EleBarChart} from "../../components/Charts/BarChart";
 import ElectricityBill from "../../components/ElectricityBill"
 import {BiCheckSquare} from "react-icons/bi"
 import {RiCheckboxIndeterminateLine} from "react-icons/ri"
-import { Table, Thead, Tbody, Tr, Th, Td } from '@chakra-ui/react'
-import { TriangleDownIcon, TriangleUpIcon } from '@chakra-ui/icons'
-import { useTable, useSortBy } from 'react-table'
+import SummaryTable from "../../components/Table"
 
 export const Dashboard = () => {
     return (
@@ -97,6 +95,11 @@ export const Dashboard = () => {
                 </SimpleGrid>
             </Box>
 
+            <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
+                <SimpleGrid columns={{base: 1, md: 1}} spacing={{base: 5, lg: 8}}>
+                    {<SummaryTable/>}
+                </SimpleGrid>
+            </Box>
 
             <Box maxW="10xl" mx={'auto'} pt={5} px={{base: 2, sm: 12, md: 17}}>
                 <SimpleGrid columns={{base: 1, md: 4}} spacing={{base: 5, lg: 8}}>
